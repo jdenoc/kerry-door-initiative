@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  node:
+    build:
+      context: .
+      dockerfile: node.dockerfile
+    container_name: 'node'
+    ports:
+      - 80:80
+    volumes:
+      - .:/code
+    dns_search:
+      - site.docker
